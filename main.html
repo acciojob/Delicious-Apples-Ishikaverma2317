@@ -1,151 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Discover delicious apple varieties with detailed information about prices, benefits, and colors">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delicious Apples - Premium Apple Varieties</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Delicious Apples</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Delicious Apples</h1>
-            <p>Premium Apple Varieties - Fresh from Our Orchards</p>
-        </header>
-
-        <div class="product-grid">
-            <!-- Product 1 -->
-            <div class="product">
-                <h2 class="product_name">Honeycrisp Apple</h2>
-                <div class="product_query">
-                    <strong>Price Range:</strong> $2.99 - $4.99 per lb
-                </div>
-                <div class="product_query">
-                    <strong>Benefits:</strong> High in fiber, Vitamin C, and antioxidants
-                </div>
-                <div class="product_query">
-                    <strong>Best For:</strong> Eating raw, salads, and baking
-                </div>
-                
-                <div class="photo_container">
-                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&h=400&fit=crop" alt="Honeycrisp Apple" class="photo_index">
-                    <div class="photo_address">
-                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Honeycrisp View 1">
-                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=100&h=100&fit=crop" alt="Honeycrisp View 2">
-                        <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=100&h=100&fit=crop" alt="Honeycrisp View 3">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="product">
-                <h2 class="product_name">Granny Smith</h2>
-                <div class="product_query">
-                    <strong>Price Range:</strong> $1.99 - $3.49 per lb
-                </div>
-                <div class="product_query">
-                    <strong>Benefits:</strong> Low calorie, high in fiber, perfect for weight management
-                </div>
-                <div class="product_query">
-                    <strong>Best For:</strong> Baking, sauces, and diabetic-friendly snacks
-                </div>
-                
-                <div class="photo_container">
-                    <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400&h=400&fit=crop" alt="Granny Smith Apple" class="photo_index">
-                    <div class="photo_address">
-                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=100&h=100&fit=crop" alt="Granny Smith View 1">
-                        <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=100&h=100&fit=crop" alt="Granny Smith View 2">
-                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Granny Smith View 3">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 3 -->
-            <div class="product">
-                <h2 class="product_name">Red Delicious</h2>
-                <div class="product_query">
-                    <strong>Price Range:</strong> $2.49 - $3.99 per lb
-                </div>
-                <div class="product_query">
-                    <strong>Benefits:</strong> Rich in antioxidants, supports heart health
-                </div>
-                <div class="product_query">
-                    <strong>Best For:</strong> Snacking, lunch boxes, and fresh eating
-                </div>
-                
-                <div class="photo_container">
-                    <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=400&h=400&fit=crop" alt="Red Delicious Apple" class="photo_index">
-                    <div class="photo_address">
-                        <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=100&h=100&fit=crop" alt="Red Delicious View 1">
-                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Red Delicious View 2">
-                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=100&h=100&fit=crop" alt="Red Delicious View 3">
-                    </div>
-                </div>
-            </div>
+  <section class="product">
+    <div class="product__photo">
+      <div class="photo-container">
+        <div class="photo-main">
+          <img src="https://i.imgur.com/1YcMdMn.png" alt="apple">
         </div>
-
-        <!-- Viewers Section -->
-        <div class="viewers">
-            <div class="price">$738</div>
-            <h3>Available Colors</h3>
-            <div class="color-grid">
-                <div class="color-item">
-                    <div class="color-name">Green</div>
-                    <div>Fresh & Tart</div>
-                </div>
-                <div class="color-item">
-                    <div class="color-name">Yellow</div>
-                    <div>Sweet & Crisp</div>
-                </div>
-                <div class="color-item">
-                    <div class="color-name">Orange</div>
-                    <div>Unique & Flavorful</div>
-                </div>
-                <div class="color-item">
-                    <div class="color-name">Red</div>
-                    <div>Classic & Juicy</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Benefits Section -->
-        <div class="shared_options">
-            <h2>BENEFITS</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <i class="fa fa-heart"></i>
-                    <h3>Heart Health</h3>
-                    <p>Rich in soluble fiber that helps lower cholesterol</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa fa-apple"></i>
-                    <h3>Weight Management</h3>
-                    <p>Low in calories and high in fiber for satiety</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa fa-shield"></i>
-                    <h3>Immune Boost</h3>
-                    <p>Packed with Vitamin C and antioxidants</p>
-                </div>
-                <div class="benefit-item">
-                    <i class="fa fa-brain"></i>
-                    <h3>Brain Health</h3>
-                    <p>Contains antioxidants that protect brain cells</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Add to Cart Button -->
-        <button class="add-to-cart">ADD TO CART</button>
-
-        <footer>
-            <p>&copy; 2024 Delicious Apples Grocery Store. All rights reserved.</p>
-            <p>Fresh from our orchards to your table</p>
-        </footer>
+        <ul class="photo-album">
+          <li><img src="https://i.imgur.com/1YcMdMn.png" alt="green apple"></li>
+          <li><img src="https://i.imgur.com/1dUeMhm.png" alt="yellow apple"></li>
+          <li><img src="https://i.imgur.com/SX3b1fj.png" alt="orange apple"></li>
+          <li><img src="https://i.imgur.com/odxXEdh.png" alt="red apple"></li>
+        </ul>
+      </div>
     </div>
+    <div class="description">
+      <h1>Delicious Apples</h1>
+      <p>CODE: 4000</p>
+      <p class="price">RS 7.93</p>
 
-    <script src="script.js"></script>
+      <h3>SELECT A COLOR</h3>
+      <div class="variant">
+        <span class="color green"></span>
+        <span class="color yellow"></span>
+        <span class="color orange"></span>
+        <span class="color red"></span>
+      </div>
+
+      <h3>BENEFITS</h3>
+      <ul>
+        <li>Apples are nutritious</li>
+        <li>Apples may be good for weight loss</li>
+        <li>Apples may be good for bone health</li>
+        <li>They’re linked to a lower risk of diabetes</li>
+      </ul>
+      <button>ADD TO CART</button>
+    </div>
+  </section>
 </body>
 </html>
