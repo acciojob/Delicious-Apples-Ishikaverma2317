@@ -1,49 +1,429 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Delicious Apples</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="description" content="Discover delicious apple varieties with detailed information about prices, benefits, and colors">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Apples - Premium Apple Varieties</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+        }
+
+        .product_name {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .product_query {
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .product_query strong {
+            color: #2c3e50;
+        }
+
+        /* Photo Container */
+        .photo_container {
+            background: #ecf0f1;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .photo_index {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #3498db;
+            margin: 0 auto 15px;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .photo_address {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .photo_address img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #bdc3c7;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .photo_address img:hover {
+            border-color: #3498db;
+            transform: scale(1.1);
+        }
+
+        /* Viewers Section */
+        .viewers {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .viewers .price {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .color-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .color-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-5px);
+        }
+
+        .color-item .color-name {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        /* Benefits Section */
+        .shared_options {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .shared_options h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-item {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item:hover {
+            transform: scale(1.05);
+            background: #3498db;
+            color: white;
+        }
+
+        .benefit-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #3498db;
+        }
+
+        .benefit-item:hover i {
+            color: white;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .add-to-cart {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 25px;
+            cursor: pointer;
+            margin: 20px auto;
+            display: block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        .add-to-cart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .photo_address {
+                justify-content: center;
+            }
+            
+            .color-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <section class="product">
-    <div class="product__photo">
-      <div class="photo-container">
-        <div class="photo-main">
-          <img src="https://i.imgur.com/1YcMdMn.png" alt="apple">
+    <div class="container">
+        <header>
+            <h1>Delicious Apples</h1>
+            <p>Premium Apple Varieties - Fresh from Our Orchards</p>
+        </header>
+
+        <div class="product-grid">
+            <!-- Product 1 -->
+            <div class="product">
+                <h2 class="product_name">Honeycrisp Apple</h2>
+                <div class="product_query">
+                    <strong>Price Range:</strong> $2.99 - $4.99 per lb
+                </div>
+                <div class="product_query">
+                    <strong>Benefits:</strong> High in fiber, Vitamin C, and antioxidants
+                </div>
+                <div class="product_query">
+                    <strong>Best For:</strong> Eating raw, salads, and baking
+                </div>
+                
+                <div class="photo_container">
+                    <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=400&h=400&fit=crop" alt="Honeycrisp Apple" class="photo_index">
+                    <div class="photo_address">
+                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Honeycrisp View 1">
+                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=100&h=100&fit=crop" alt="Honeycrisp View 2">
+                        <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=100&h=100&fit=crop" alt="Honeycrisp View 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <h2 class="product_name">Granny Smith</h2>
+                <div class="product_query">
+                    <strong>Price Range:</strong> $1.99 - $3.49 per lb
+                </div>
+                <div class="product_query">
+                    <strong>Benefits:</strong> Low calorie, high in fiber, perfect for weight management
+                </div>
+                <div class="product_query">
+                    <strong>Best For:</strong> Baking, sauces, and diabetic-friendly snacks
+                </div>
+                
+                <div class="photo_container">
+                    <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=400&h=400&fit=crop" alt="Granny Smith Apple" class="photo_index">
+                    <div class="photo_address">
+                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=100&h=100&fit=crop" alt="Granny Smith View 1">
+                        <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=100&h=100&fit=crop" alt="Granny Smith View 2">
+                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Granny Smith View 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="product">
+                <h2 class="product_name">Red Delicious</h2>
+                <div class="product_query">
+                    <strong>Price Range:</strong> $2.49 - $3.99 per lb
+                </div>
+                <div class="product_query">
+                    <strong>Benefits:</strong> Rich in antioxidants, supports heart health
+                </div>
+                <div class="product_query">
+                    <strong>Best For:</strong> Snacking, lunch boxes, and fresh eating
+                </div>
+                
+                <div class="photo_container">
+                    <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=400&h=400&fit=crop" alt="Red Delicious Apple" class="photo_index">
+                    <div class="photo_address">
+                        <img src="https://images.unsplash.com/photo-1595078475328-1ab05d0a6a0e?w=100&h=100&fit=crop" alt="Red Delicious View 1">
+                        <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?w=100&h=100&fit=crop" alt="Red Delicious View 2">
+                        <img src="https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=100&h=100&fit=crop" alt="Red Delicious View 3">
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul class="photo-album">
-          <li><img src="https://i.imgur.com/1YcMdMn.png" alt="green apple"></li>
-          <li><img src="https://i.imgur.com/1dUeMhm.png" alt="yellow apple"></li>
-          <li><img src="https://i.imgur.com/SX3b1fj.png" alt="orange apple"></li>
-          <li><img src="https://i.imgur.com/odxXEdh.png" alt="red apple"></li>
-        </ul>
-      </div>
-    </div>
-    <div class="description">
-      <h1>Delicious Apples</h1>
-      <p>CODE: 4000</p>
-      <p class="price">RS 7.93</p>
 
-      <h3>SELECT A COLOR</h3>
-      <div class="variant">
-        <span class="color green"></span>
-        <span class="color yellow"></span>
-        <span class="color orange"></span>
-        <span class="color red"></span>
-      </div>
+        <!-- Viewers Section -->
+        <div class="viewers">
+            <div class="price">$738</div>
+            <h3>Available Colors</h3>
+            <div class="color-grid">
+                <div class="color-item">
+                    <div class="color-name">Green</div>
+                    <div>Fresh & Tart</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-name">Yellow</div>
+                    <div>Sweet & Crisp</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-name">Orange</div>
+                    <div>Unique & Flavorful</div>
+                </div>
+                <div class="color-item">
+                    <div class="color-name">Red</div>
+                    <div>Classic & Juicy</div>
+                </div>
+            </div>
+        </div>
 
-      <h3>BENEFITS</h3>
-      <ul>
-        <li>Apples are nutritious</li>
-        <li>Apples may be good for weight loss</li>
-        <li>Apples may be good for bone health</li>
-        <li>They’re linked to a lower risk of diabetes</li>
-      </ul>
-      <button>ADD TO CART</button>
+        <!-- Benefits Section -->
+        <div class="shared_options">
+            <h2>BENEFITS</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fa fa-heart"></i>
+                    <h3>Heart Health</h3>
+                    <p>Rich in soluble fiber that helps lower cholesterol</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa fa-apple"></i>
+                    <h3>Weight Management</h3>
+                    <p>Low in calories and high in fiber for satiety</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa fa-shield"></i>
+                    <h3>Immune Boost</h3>
+                    <p>Packed with Vitamin C and antioxidants</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fa fa-brain"></i>
+                    <h3>Brain Health</h3>
+                    <p>Contains antioxidants that protect brain cells</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add to Cart Button -->
+        <button class="add-to-cart">ADD TO CART</button>
+
+        <footer>
+            <p>&copy; 2024 Delicious Apples Grocery Store. All rights reserved.</p>
+            <p>Fresh from our orchards to your table</p>
+        </footer>
     </div>
-  </section>
+
+    <script>
+        // Simple image switcher for photo addresses
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImages = document.querySelectorAll('.photo_index');
+            const thumbnails = document.querySelectorAll('.photo_address img');
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    const productContainer = this.closest('.product');
+                    const mainImg = productContainer.querySelector('.photo_index');
+                    mainImg.src = this.src.replace('w=100&h=100', 'w=400&h=400');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
