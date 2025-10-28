@@ -1,4 +1,4 @@
-// Change main photo when album image is clicked
+// Change main photo when small album image is clicked
 const mainPhoto = document.querySelector('.photo-main img');
 const albumPhotos = document.querySelectorAll('.photo-album li img');
 

@@ -1,10 +1,11 @@
 body {
   font-family: Arial, sans-serif;
-  background: #00d084;
+  background-color: #00d084;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin: 0;
 }
 
 .product {
@@ -12,13 +13,17 @@ body {
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 700px;
 }
 
 .product__photo {
   flex: 1;
   background: #f7f7f7;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .photo-container {
@@ -28,67 +33,87 @@ body {
 }
 
 .photo-main img {
-  width: 200px;
+  width: 250px;
   height: auto;
-  border-radius: 10px;
 }
 
 .photo-album {
   display: flex;
-  gap: 10px;
+  justify-content: center;
   margin-top: 15px;
   list-style: none;
   padding: 0;
 }
 
-.photo-album li img {
-  width: 40px;
-  height: 40px;
+.photo-album li {
+  margin: 0 5px;
   cursor: pointer;
-  border-radius: 50%;
-  border: 2px solid transparent;
 }
 
-.photo-album li img:hover {
-  border: 2px solid #000;
+.photo-album img {
+  width: 40px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.photo-album img:hover {
+  transform: scale(1.1);
 }
 
 .description {
   flex: 1;
-  padding: 20px;
+  padding: 40px;
+}
+
+.description h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.description p {
+  color: #888;
+  margin: 5px 0 20px;
 }
 
 .price {
+  color: #d90429;
   font-size: 24px;
-  font-weight: bold;
-  color: red;
-}
-
-.variant {
-  display: flex;
-  gap: 10px;
   margin: 10px 0;
 }
 
-.color {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  cursor: pointer;
+.varieties {
+  display: flex;
+  margin: 10px 0 20px;
 }
 
-.green { background: green; }
-.yellow { background: gold; }
-.orange { background: orange; }
-.red { background: red; }
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: red;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+.varieties img {
+  width: 35px;
+  margin-right: 10px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.varieties img:hover {
+  transform: scale(1.1);
+}
+
+ul {
+  list-style-type: disc;
+  margin: 10px 0 20px 20px;
+  color: #555;
+}
+
+.add {
+  background-color: #d90429;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add:hover {
+  background-color: #a7031f;
 }
