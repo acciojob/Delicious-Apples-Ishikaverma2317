@@ -1,8 +1,7 @@
-// Change main photo when small album image is clicked
 const mainPhoto = document.querySelector('.photo-main img');
-const albumPhotos = document.querySelectorAll('.photo-album li img');
+const albumPhotos = document.querySelectorAll('.photo-album img');
 
-albumPhotos.forEach(photo => {
+albumPhotos.forEach((photo) => {
   photo.addEventListener('click', () => {
     mainPhoto.src = photo.src;
   });
